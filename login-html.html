@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="login-style.css">
+    <title>login</title>
+</head>
+<body>
+    <script src="script.js"></script>
+    <div class="auth-container login">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="login-username" required>
+            </div>
+
+            <div class="form-group password-container">
+                <label for="login-password">Password:</label>
+                <input type="password" id="passwordLogin" class="login-password" name="login-password" required>
+                <span id="togglePasswordLogin" class="toggle-password-login" data-visible="true" onclick="showAndHidePassword('passwordLogin','togglePasswordLogin')"></span>
+            </div>
+
+            <button type="button" class="auth-button" onclick="loginBtnClicked()">Login </button>
+            <p>Don't have an account? <span class="switch-link" id="switch-to-signup">Sign Up</span></p>
+        </form>
+    </div>
+
+    <div class="auth-container signup">
+        <h1>Sign Up</h1>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="signup-username">Name:</label>
+                <input type="text" id="signup-name" name="signup-name" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-username">Username:</label>
+                <input type="text" id="signup-username" name="signup-username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="signup-password">Password:</label>
+                <input type="password" id="passwordSignup" name="signup-password" required>
+                <span id="togglePasswordSignup" class="toggle-password-signup" data-visible="true" onclick="showAndHidePassword('passwordSignup','togglePasswordSignup')"></span>
+            </div>
+
+            <button type="button" class="auth-button">Sign Up</button>
+            <p>Already have an account? <span class="switch-link" id="switch-to-login">Login</span></p>
+        </form>
+    </div>
+
+    <script>
+        const loginContainer = document.querySelector(".auth-container.login");
+        const signupContainer = document.querySelector(".auth-container.signup");
+        const switchToSignup = document.querySelector("#switch-to-signup");
+        const switchToLogin = document.querySelector("#switch-to-login");
+
+        switchToSignup.addEventListener("click", () => {
+            loginContainer.style.opacity = 0;
+            loginContainer.style.visibility = "hidden";
+            signupContainer.style.opacity = 1;
+            signupContainer.style.visibility = "visible";
+        });
+
+        switchToLogin.addEventListener("click", () => {
+            signupContainer.style.opacity = 0;
+            signupContainer.style.visibility = "hidden";
+            loginContainer.style.opacity = 1;
+            loginContainer.style.visibility = "visible";
+        });
+    </script>
+</body>
+</html>

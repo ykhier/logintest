@@ -1,0 +1,138 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* container design */
+.auth-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.auth-container.signup {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.auth-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    text-align:left;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.auth-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background-color: #0056b3;
+}
+
+.switch-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*****************/
+.toggle-password-login{
+    position: absolute;
+    right: 10px;
+    top: 51.4%;
+    transform: translateY(60%);
+    right: 1.75rem;
+    cursor: pointer;
+}
+.toggle-password-signup{
+    position: absolute;
+    right: 10px;
+    top: 64.6%;
+    transform: translateY(90%);
+    right: 1.75rem;
+    cursor: pointer;
+}
+/* design the open and close eye */
+.toggle-password-login[data-visible="true"]::before {
+    content: "\f06e"; /* Font Awesome open eye icon */
+    font-family: 'Font Awesome 5 Free';
+    color: lightslategray; /* Color for open eye icon */
+}
+
+.toggle-password-login[data-visible="false"]::before {
+    content: "\f070"; /* Font Awesome closed eye icon */
+    font-family: 'Font Awesome 5 Free';
+    color: lightslategray; /* Color for closed eye icon */
+}
+
+.toggle-password-signup[data-visible="true"]::before {
+    content: "\f06e"; /* Font Awesome open eye icon */
+    font-family: 'Font Awesome 5 Free';
+    color: lightslategray; /* Color for open eye icon */
+}
+
+.toggle-password-signup[data-visible="false"]::before {
+    content: "\f070"; /* Font Awesome closed eye icon */
+    font-family: 'Font Awesome 5 Free';
+    color: lightslategray; /* Color for closed eye icon */
+}
+
+
+@media screen and (max-width:600px){
+    .auth-container{
+        padding: 20px;  
+        text-align: center;
+        width: 250px;
+    }
+    .form-group{
+        text-align: center;
+    }
+    .form-group input {
+        width: 90%;    
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .toggle-password-signup{
+        top: 65.5%;
+    }
+}
